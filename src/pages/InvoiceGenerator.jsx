@@ -39,6 +39,7 @@ import {
   WhatsAppBtn,
   PreviewModal,
   UpiQRCode,
+  AmberBtn
 } from "../components/index";
 
 // ─── INVOICE PDF HTML BUILDER ─────────────────────────────────────────────────
@@ -610,13 +611,32 @@ export default function InvoiceGenerator() {
         <div style={{ width: "100%", maxWidth: 800 }}>
           {/* ── Heading ── */}
           <div className="fade-up" style={{ marginBottom: 36 }}>
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                background: "#1a1200",
+                border: "1px solid rgba(245,158,11,0.3)",
+                borderRadius: 999,
+                padding: "4px 14px",
+                marginBottom: 14,
+                fontSize: 11,
+                color: "#f59e0b",
+                fontWeight: 700,
+                letterSpacing: "1.5px",
+                textTransform: "uppercase",
+              }}
+            >
+              Invoice Generator
+            </div>
             <h1
               style={{
                 fontFamily: "Georgia, serif",
                 fontSize: 36,
                 fontWeight: 700,
                 lineHeight: 1.15,
-                background: "linear-gradient(to right, #c4b5fd, #60a5fa)",
+                background: "linear-gradient(to right, #fcd34d, #f97316)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 margin: 0,
@@ -632,7 +652,7 @@ export default function InvoiceGenerator() {
                 margin: "8px 0 0 0",
               }}
             >
-              Fill in the details to generate a professional invoice
+              Send a professional project Invoice
             </p>
           </div>
 
@@ -788,13 +808,12 @@ export default function InvoiceGenerator() {
               marginTop: 8,
             }}
           >
-            <PrimaryBtn
+            <AmberBtn
               onClick={() => canPreview && setShowModal(true)}
               disabled={!canPreview}
-              className="px-9 py-3.5 text-[15px] shadow-[0_4px_20px_rgba(124,111,255,0.35)]"
             >
               Preview Invoice →
-            </PrimaryBtn>
+            </AmberBtn>
             {!canPreview && (
               <p style={{ color: "#3a3a6a", fontSize: 12, margin: 0 }}>
                 Fill client name and all item details to continue
