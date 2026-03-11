@@ -84,7 +84,7 @@ const NAV_LINKS = [
   { path: "/reports", label: "Reports", icon: "📈" },
 ];
 
-// ─── SHARED LAYOUT (wraps all routes via <Outlet />) ─────────────────────────
+
 function Layout() {
   const navigate = useNavigate();
   const location = useLocation();

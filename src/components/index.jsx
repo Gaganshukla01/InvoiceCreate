@@ -358,7 +358,10 @@ export function InvoiceLineItems({ items, onUpdate, onAdd, onRemove }) {
   return (
     <div>
       {/* Column headers */}
-      <div className="grid grid-cols-[1fr_60px_110px_70px_32px] gap-2 mb-2 px-1">
+      <div
+        className="grid grid-cols-[1fr_60px_110px_70px_32px] gap-2 px-1"
+        style={{ marginBottom: 8 }}
+      >
         {["Description", "Qty", "Rate (₹)", "GST %", ""].map((h, i) => (
           <span
             key={i}
@@ -372,7 +375,8 @@ export function InvoiceLineItems({ items, onUpdate, onAdd, onRemove }) {
       {items.map((item) => (
         <div
           key={item.id}
-          className="grid grid-cols-[1fr_60px_110px_70px_32px] gap-2 mb-2 p-1 rounded-lg hover:bg-violet-500/5 transition-colors"
+          className="grid grid-cols-[1fr_60px_110px_70px_32px] gap-2 p-1 rounded-lg hover:bg-violet-500/5 transition-colors"
+          style={{ marginBottom: 8 }}
         >
           <Select
             value={item.desc}
@@ -429,7 +433,10 @@ export function InvoiceLineItems({ items, onUpdate, onAdd, onRemove }) {
 export function EstimateLineItems({ items, onUpdate, onAdd, onRemove }) {
   return (
     <div>
-      <div className="grid grid-cols-[1fr_60px_110px_32px] gap-2 mb-2 px-1">
+      <div
+        className="grid grid-cols-[1fr_60px_110px_32px] gap-2 px-1"
+        style={{ marginBottom: 8 }}
+      >
         {["Description", "Qty", "Rate (₹)", ""].map((h, i) => (
           <span
             key={i}
@@ -442,7 +449,10 @@ export function EstimateLineItems({ items, onUpdate, onAdd, onRemove }) {
 
       {items.map((item) => (
         <div key={item.id} className="mb-3">
-          <div className="grid grid-cols-[1fr_60px_110px_32px] gap-2 mb-1.5 p-1 rounded-lg hover:bg-amber-500/5 transition-colors">
+          <div
+            className="grid grid-cols-[1fr_60px_110px_32px] gap-2 p-1 rounded-lg hover:bg-amber-500/5 transition-colors"
+            style={{ marginBottom: 10 }}
+          >
             <Select
               value={item.desc}
               onChange={(e) => onUpdate(item.id, "desc", e.target.value)}
