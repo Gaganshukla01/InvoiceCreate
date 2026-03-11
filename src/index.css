@@ -1,4 +1,29 @@
-*{
-  margin: 0;
-  padding: 0;
+@import "tailwindcss";
+
+@layer base {
+  * {
+    /* box-sizing: border-box; */
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background: #07071f;
+    color: #f0f0ff;
+    font-family: "DM Sans", sans-serif;
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #7c6fff44;
+    border-radius: 4px;
+  }
+  option {
+    background: #0e0e30;
+    color: #f0f0ff;
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.6) sepia(1) hue-rotate(200deg);
+    opacity: 0.7;
+  }
 }
