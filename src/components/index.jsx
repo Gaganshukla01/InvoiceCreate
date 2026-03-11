@@ -277,7 +277,7 @@ export function ClientDropdown({ value, onChange, onSelect }) {
   return (
     <div ref={wrapRef} className="relative col-span-2">
       <Label>Client / Company Name *</Label>
-      <div className="relative">
+      <div className="relative pd-5">
         <Input
           autoComplete="off"
           placeholder="Search preset clients or type a new name…"
@@ -298,7 +298,10 @@ export function ClientDropdown({ value, onChange, onSelect }) {
       </div>
 
       {open && (
-        <div className="absolute top-[calc(100%+6px)] left-0 right-0 z-50 bg-[#0e0e30] border border-[#3a3a6a] rounded-xl overflow-hidden shadow-[0_16px_48px_rgba(0,0,0,0.7)] max-h-60 overflow-y-auto">
+        <div
+          className="absolute top-[calc(100%+6px)] left-0 right-0 z-50 bg-[#0e0e30] border border-[#3a3a6a] rounded-xl overflow-hidden shadow-[0_16px_48px_rgba(0,0,0,0.7)] max-h-60 overflow-y-auto "
+         
+        >
           {isCustom && (
             <div
               onClick={() => {
@@ -312,6 +315,7 @@ export function ClientDropdown({ value, onChange, onSelect }) {
                 setOpen(false);
               }}
               className="px-3.5 py-2.5 cursor-pointer border-b border-[#1e1e4a] flex items-center gap-2 hover:bg-[#16164a] transition-colors"
+              
             >
               <span className="text-violet-400">✎</span>
               <span className="text-[#c0c0e0] text-sm">
@@ -333,7 +337,8 @@ export function ClientDropdown({ value, onChange, onSelect }) {
                 setQuery(c.name);
                 setOpen(false);
               }}
-              className="px-3.5 py-2.5 cursor-pointer border-b border-[#14143a] hover:bg-[#16164a] transition-colors"
+               style={{ padding: "8px" }}
+              className="px-3.5 py-2.5  cursor-pointer border-b border-[#14143a] hover:bg-[#16164a] transition-colors"
             >
               <div className="text-[#f0f0ff] font-semibold text-sm">
                 {c.name}
