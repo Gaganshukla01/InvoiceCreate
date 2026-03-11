@@ -10,22 +10,23 @@ export const PRESET_CLIENTS = [
 ];
 
 export const SERVICES = [
-  "Website Design",
   "Frontend Development",
   "Backend Development",
-  "Full Stack Development",
-  "UI/UX Design",
-  "SEO Optimization",
   "Website Maintenance",
-  "E-Commerce Development",
-  "Custom Web App",
-  "API Integration",
+  "Full Stack Development",
   "Hosting & Deployment",
+  "AWS Management",
   "Domain Services",
+  "UI/UX Design",
+  "Custom Web App",
+  "Custom Service Integration",
+  "SEO Optimization",
+  "API Integration",
   "Logo Design",
   "Social Media Setup",
   "Content Writing",
   "Digital Marketing",
+  "Other (Specify in description)",
 ];
 
 export const GST_RATES = [0, 5, 12, 18, 28];
