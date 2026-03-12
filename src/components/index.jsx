@@ -14,14 +14,20 @@ export function Label({ children, className = "" }) {
 
 /** Section heading with numbered badge */
 export function SectionTitle({ num, title, accent = "violet" }) {
-  const badge =
+  const badgeStyle =
     accent === "amber"
-      ? "bg-gradient-to-br from-amber-500 to-orange-500"
-      : "bg-gradient-to-br from-violet-500 to-blue-400";
+      ? { background: "linear-gradient(135deg,#f59e0b,#f97316)" }
+      : accent === "green"
+        ? { background: "linear-gradient(135deg,#16a34a,#059669)" }
+        : { background: "linear-gradient(135deg,#7c6fff,#60a5fa)" };
   return (
-    <h2 className="flex items-center gap-3 font-serif text-xl text-[#f0f0ff] mb-5 font-semibold">
+    <h2
+      className="flex items-center gap-3 font-serif text-xl text-[#f0f0ff] font-semibold"
+      style={{ marginBottom: 20 }}
+    >
       <span
-        className={`${badge} text-white text-[10px] font-bold font-sans px-2 py-0.5 rounded tracking-widest`}
+        className="text-white text-[10px] font-bold font-sans px-2 py-0.5 rounded tracking-widest"
+        style={badgeStyle}
       >
         {num}
       </span>
@@ -277,7 +283,7 @@ export function ClientDropdown({ value, onChange, onSelect }) {
   return (
     <div ref={wrapRef} className="relative col-span-2">
       <Label>Client / Company Name *</Label>
-      <div className="relative pd-5">
+      <div className="relative">
         <Input
           autoComplete="off"
           placeholder="Search preset clients or type a new name…"
@@ -298,10 +304,8 @@ export function ClientDropdown({ value, onChange, onSelect }) {
       </div>
 
       {open && (
-        <div
-          className="absolute top-[calc(100%+6px)] left-0 right-0 z-50 bg-[#0e0e30] border border-[#3a3a6a] rounded-xl overflow-hidden shadow-[0_16px_48px_rgba(0,0,0,0.7)] max-h-60 overflow-y-auto "
-         
-        >
+        <div className="absolute top-[calc(100%+6px)] left-0 right-0 z-50 bg-[#0e0e30] border border-[#3a3a6a] rounded-xl overflow-hidden shadow-[0_16px_48px_rgba(0,0,0,0.7)] max-h-60 overflow-y-auto"
+        style={{padding:"8px"}}>
           {isCustom && (
             <div
               onClick={() => {
@@ -315,7 +319,6 @@ export function ClientDropdown({ value, onChange, onSelect }) {
                 setOpen(false);
               }}
               className="px-3.5 py-2.5 cursor-pointer border-b border-[#1e1e4a] flex items-center gap-2 hover:bg-[#16164a] transition-colors"
-              
             >
               <span className="text-violet-400">✎</span>
               <span className="text-[#c0c0e0] text-sm">
@@ -337,8 +340,7 @@ export function ClientDropdown({ value, onChange, onSelect }) {
                 setQuery(c.name);
                 setOpen(false);
               }}
-               style={{ padding: "8px" }}
-              className="px-3.5 py-2.5  cursor-pointer border-b border-[#14143a] hover:bg-[#16164a] transition-colors"
+              className="px-3.5 py-2.5 cursor-pointer border-b border-[#14143a] hover:bg-[#16164a] transition-colors"
             >
               <div className="text-[#f0f0ff] font-semibold text-sm">
                 {c.name}

@@ -62,7 +62,7 @@ const TOOLS = [
     icon: "🧾",
     label: "Receipt Generator",
     desc: "Issue payment receipts instantly once a client has settled their invoice.",
-    tag: "Coming Soon",
+    tag: "Active",
     tagStyle: {
       color: "#34d399",
       backgroundColor: "rgba(16,185,129,0.1)",
@@ -77,7 +77,7 @@ const TOOLS = [
     barStyle: { background: "linear-gradient(to right, #10b981, #06b6d4)" },
     arrowStyle: {},
     stats: "Instant · Branded · PDF",
-    disabled: true,
+    disabled:false,
   },
   {
     id: "clients",

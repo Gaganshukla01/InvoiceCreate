@@ -11,6 +11,7 @@ import mainLogo from "./assets/images/mainLogo.jpeg";
 import HomePage from "./pages/Home.jsx";
 import InvoiceGenerator from "./pages/InvoiceGenerator.jsx";
 import EstimateGenerator from "./pages/EstimateGenerator.jsx";
+import ReceiptGenerator from "./pages/RecieptGenrator.jsx";
 
 // ─── COMING SOON PLACEHOLDER ─────────────────────────────────────────────────
 function ComingSoon({ title, icon }) {
@@ -277,7 +278,7 @@ export default function App() {
           <Route path="estimate" element={<EstimateGenerator />} />
           <Route
             path="receipt"
-            element={<ComingSoon title="Receipt Generator" icon="🧾" />}
+            element={<ReceiptGenerator />}
           />
           <Route
             path="clients"
